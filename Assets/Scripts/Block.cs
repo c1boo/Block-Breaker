@@ -27,16 +27,9 @@ public class Block : MonoBehaviour {
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
-        PlayCollisionSound();
-
         if (tag == "Breakable") {
             HandleHit();
         }
-
-    }
-
-    private void PlayCollisionSound() {
-        AudioSource.PlayClipAtPoint(breakSound, Camera.main.transform.position);
     }
 
     private void HandleHit() {
@@ -57,9 +50,14 @@ public class Block : MonoBehaviour {
 
     private void DestroyBlock() {
         level.DecreaseNumberOfBlocks();
+        PlayCollisionSound();
         FindObjectOfType<GameState>().AddToScore(maxHits);
         PlayBreakingVFX();
         Destroy(gameObject);
+    }
+
+    private void PlayCollisionSound() {
+        AudioSource.PlayClipAtPoint(breakSound, Camera.main.transform.position);
     }
 
     private void PlayBreakingVFX() {
