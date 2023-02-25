@@ -16,6 +16,7 @@ public class GameState : MonoBehaviour {
         //Singleton Patter
         int nrOfGameStates = FindObjectsOfType<GameState>().Length;
         if (nrOfGameStates > 1) {
+            gameObject.SetActive(false);
             Destroy(gameObject);
         } else {
             DontDestroyOnLoad(gameObject);
@@ -23,6 +24,7 @@ public class GameState : MonoBehaviour {
     }
 
     private void Start() {
+        scoreText = FindObjectOfType<TextMeshProUGUI>();
         scoreText.text = currentScore.ToString();
     }
 
