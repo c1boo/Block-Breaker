@@ -8,10 +8,13 @@ public class Block : MonoBehaviour {
 
     //Chaced params
     LevelController level;
+    GameState gameState;
 
     private void Start() {
         level = FindObjectOfType<LevelController>();
         level.CountBlock();
+
+        gameState = FindObjectOfType<GameState>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
@@ -19,8 +22,10 @@ public class Block : MonoBehaviour {
     }
 
     private void DestroyBlock() {
-        level.DeleteBlock();
         AudioSource.PlayClipAtPoint(breakSound, Camera.main.transform.position);
         Destroy(gameObject);
+
+        level.DeleteBlock();
+        gameState.AddToScore();
     }
 }
