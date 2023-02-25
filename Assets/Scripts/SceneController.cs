@@ -10,6 +10,7 @@ public class SceneController : MonoBehaviour {
     }
 
     public void LoadStartScreen() {
+        FindObjectOfType<GameState>().ResetGame();
         SceneManager.LoadScene(0);
     }
 
