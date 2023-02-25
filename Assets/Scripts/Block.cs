@@ -5,6 +5,7 @@ using UnityEngine;
 public class Block : MonoBehaviour {
     //Config params
     [SerializeField] AudioClip breakSound;
+    [SerializeField] GameObject breakingSparkleVFX;
 
     //Chaced params
     LevelController level;
@@ -27,5 +28,11 @@ public class Block : MonoBehaviour {
 
         level.DeleteBlock();
         gameState.AddToScore();
+        PlayBreakingVFX();
+    }
+
+    private void PlayBreakingVFX() {
+        GameObject sparklingVFX = Instantiate(breakingSparkleVFX, transform.position, transform.rotation);
+        Destroy(sparklingVFX, 2f);
     }
 }
