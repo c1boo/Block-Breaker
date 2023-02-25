@@ -48,5 +48,4 @@ public class Ball : MonoBehaviour {
         if (hasStarted)
             myAudioSource.PlayOneShot(clip);
     }
-
 }
