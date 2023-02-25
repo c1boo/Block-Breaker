@@ -15,7 +15,7 @@ public class LevelController : MonoBehaviour {
 
     public void CountBlock() => numberOfBlocks++;
 
-    public void DeleteBlock() {
+    public void DecreaseNumberOfBlocks() {
         numberOfBlocks--;
         if (numberOfBlocks <= 0) {
             sceneController.LoadNextScene();
