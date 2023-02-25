@@ -41,7 +41,7 @@ public class Block : MonoBehaviour {
 
     private void HandleHit() {
         timesHit++;
-        maxHits = hitSprites.Length;
+        maxHits = hitSprites.Length + 1;
 
         if (timesHit >= maxHits) {
             DestroyBlock();
@@ -57,7 +57,7 @@ public class Block : MonoBehaviour {
 
     private void DestroyBlock() {
         level.DecreaseNumberOfBlocks();
-        FindObjectOfType<GameState>().AddToScore();
+        FindObjectOfType<GameState>().AddToScore(maxHits);
         PlayBreakingVFX();
         Destroy(gameObject);
     }

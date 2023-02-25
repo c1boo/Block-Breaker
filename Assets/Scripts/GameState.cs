@@ -33,8 +33,8 @@ public class GameState : MonoBehaviour {
         Time.timeScale = gameSpeed;
     }
 
-    public void AddToScore() {
-        currentScore += pointsPerBlock;
+    public void AddToScore(int scoreMultiplier) {
+        currentScore += pointsPerBlock * scoreMultiplier;
         scoreText.text = currentScore.ToString();
     }
 
