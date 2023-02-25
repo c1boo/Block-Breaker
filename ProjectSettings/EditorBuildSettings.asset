@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Start Menu.unity
     guid: d137d3980bbec454f8c4ce34408ee81e
   - enabled: 1
+    path: Assets/Scenes/Dummy Level.unity
+    guid: 1eab14b2036af194a8a974eca3a1b23f
+  - enabled: 1
     path: Assets/Scenes/Level 1.unity
     guid: 4fd4a27d4dda5414fbddf41975650d23
   - enabled: 1
