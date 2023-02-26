@@ -120,9 +120,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0062027276, y: 0.011519402}
+  m_Offset: {x: 0.0062027127, y: 0.011519372}
   serializedVersion: 2
-  m_Radius: 0.20936677
+  m_Radius: 0.1963086
 --- !u!114 &375131462559152193
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,7 +137,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   paddle: {fileID: 0}
   xPush: 2
-  yPush: 15
+  yPush: 17
+  collisionOffset: 0.2
   ballSounds:
   - {fileID: 8300000, guid: 52ab4a80ccf2171429b22a098b8ead4e, type: 3}
   - {fileID: 8300000, guid: 22175a3d861f27b45b0c6c1acd0adcb8, type: 3}

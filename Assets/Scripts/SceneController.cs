@@ -4,13 +4,24 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour {
+
+    private void Start() {
+        string sceneName = SceneManager.GetActiveScene().name;
+        if (sceneName.Equals("Game Over")) {
+            FindObjectOfType<GameState>().ResetGame();
+        }
+    }
+
     public void LoadNextScene() {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex + 1);
+
+        if (SceneManager.GetActiveScene().name.Equals("Game Over")) {
+            FindObjectOfType<GameState>().ResetGame();
+        }
     }
 
     public void LoadStartScreen() {
-        FindObjectOfType<GameState>().ResetGame();
         SceneManager.LoadScene(0);
     }
 
